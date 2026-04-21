@@ -1,0 +1,76 @@
+{
+  "_comment": "daily-poster-generator 配置文件样例 — 不含真实 API key，复制后填入真实值",
+
+  "product": {
+    "name": "美晶茶叶柜 V1",
+    "model_id": "meijing-v1",
+    "reference_image": "assets/products/meijing-v1-white-bg.png",
+    "_comment_reference_image": "产品白底图路径，用于垫图生图 (img2img)"
+  },
+
+  "brand": {
+    "name_cn": "美晶",
+    "name_en": "RACHING",
+    "display": "RACHING 美晶",
+    "logo_position": "upper-left"
+  },
+
+  "image_generation": {
+    "provider": "stable-diffusion",
+    "_comment_provider": "支持值: stable-diffusion | midjourney | dalle3 | 自定义。第一版固定一个，后续可扩展",
+    "endpoint": "https://YOUR_SD_API_ENDPOINT/api/v1/img2img",
+    "api_key": "YOUR_API_KEY_HERE",
+    "params": {
+      "width": 1080,
+      "height": 1920,
+      "steps": 30,
+      "cfg_scale": 7.5,
+      "denoising_strength": 0.75,
+      "sampler": "DPM++ 2M Karras"
+    },
+    "timeout_seconds": 120,
+    "retry_on_failure": false,
+    "_comment_retry": "第一版不自动重试，失败直接报错"
+  },
+
+  "output": {
+    "base_dir": "output",
+    "dir_structure": "年/月",
+    "_comment_dir_structure": "实际路径示例: output/2026/04/",
+    "filename_format": "{date}_{topic}_{mode}_{index}.png",
+    "save_prompt_txt": true,
+    "_comment_save_prompt_txt": "每张正常图同时保存同名 .txt 提示词文件"
+  },
+
+  "quality_check": {
+    "enabled": true,
+    "product_min_area_ratio": 0.25,
+    "_comment_product_min_area_ratio": "产品主体占画面面积最小比例，低于此值标记为低质量候选图",
+    "save_low_quality": false,
+    "_comment_save_low_quality": "低质量候选图不保存，仅返回给用户并标记"
+  },
+
+  "timezone": "Asia/Shanghai",
+  "_comment_timezone": "所有日期判断统一使用北京时间",
+
+  "node_calendar": {
+    "solar_terms_source": "builtin",
+    "_comment_solar_terms_source": "节气日期来源: builtin (内置静态表) | api (外部历法 API，待扩展)",
+    "lunar_calendar_source": "builtin",
+    "_comment_lunar_calendar_source": "农历转换来源: builtin | api",
+    "coverage_years": [2025, 2026, 2027]
+  },
+
+  "llm": {
+    "_comment": "用于提示词生成的 LLM（将自由变量模块填充为高质量英文提示词）",
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-6",
+    "api_key": "YOUR_ANTHROPIC_KEY_HERE",
+    "temperature": 0.7
+  },
+
+  "debug": {
+    "verbose_output": false,
+    "_comment_verbose_output": "调试模式自动设为 true，正常模式下可手动开启排查问题"
+  }
+}
