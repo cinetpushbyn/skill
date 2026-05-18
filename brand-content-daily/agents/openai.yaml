@@ -1,0 +1,4 @@
+interface:
+  display_name: "品牌内容日报"
+  short_description: "生成高端东方收藏生活方式品牌内容日报"
+  default_prompt: "Use $brand-content-daily to generate today's high-end brand culture content daily report in Chinese."
