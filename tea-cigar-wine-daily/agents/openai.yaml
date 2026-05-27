@@ -1,0 +1,4 @@
+interface:
+  display_name: "Tea Cigar Wine Daily"
+  short_description: "Three elegant culture posts for private sales."
+  default_prompt: "Use $tea-cigar-wine-daily to create today's three-part Chinese culture push for cigars, collectible wine, and tea."
