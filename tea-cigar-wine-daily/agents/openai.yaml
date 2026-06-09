@@ -1,0 +1,4 @@
+interface:
+  display_name: "Tea Cigar Wine Encyclopedia"
+  short_description: "Daily Chinese knowledge cards for tea, cigars, wine, and spirits."
+  default_prompt: "Use $tea-cigar-wine-daily to create today's Chinese tea-cigar-wine knowledge mini-encyclopedia."
