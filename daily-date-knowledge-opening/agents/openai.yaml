@@ -1,0 +1,4 @@
+interface:
+  display_name: "每日日期知识开篇"
+  short_description: "生成日期金句、节日节气与历史故事"
+  default_prompt: "Use $daily-date-knowledge-opening to search today's calendar and a useful book quote, then generate a polished Chinese daily date-and-knowledge opening with emoji."
